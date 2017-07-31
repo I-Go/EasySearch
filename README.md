@@ -1,4 +1,4 @@
-iHeart-Chrome-Extension
+EasySearch
 =======================
 
-Example of a Chrome Extension that communicates between every layers
+EasySearch is quick search tools
