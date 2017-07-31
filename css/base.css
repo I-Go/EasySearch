@@ -1,0 +1,144 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////  GENERAL  ///////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+body {
+    background: rgba(0, 0, 0, 0) none repeat scroll !important;
+    font: 11px Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////  EasySearch  ///////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#search-box {
+    position: absolute;
+    margin-top: 10%;
+    width: 715px;
+    right: 120px;
+    z-index: 999;
+}
+
+#keyword {
+    height: 50px;
+}
+
+#search-button {
+    height: 50px;
+    width: 100px;
+}
+
+#search-button:hover {
+    color: #F00;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#close-button {
+    height: 50px;
+    width: 100px;
+}
+
+#close-button:hover {
+    color: #1644af;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#left-search {
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*background: #f1f9f7;*/
+    background: rgba(241, 249, 247, 0.3) none repeat scroll !important;
+}
+
+#right-search {
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*background: #f9fbf9;*/
+    background: rgba(249, 251, 249, 0.3) none repeat scroll !important;
+}
+
+.search-div iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////  widget-box  ///////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#widget-box {
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#widget-box .widget {
+    /*border-radius: 10px 10px 10px 10px;*/
+    /*background-color: green;*/
+    color: #868383;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+/*#widget-box .widget.active,*/
+
+#widget-box .widget:hover {
+    color: #F00;
+    cursor: pointer;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////  Popup       ///////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#popupBox {
+    padding: 30px;
+    width: 500px;
+}
+
+#popupBox h1 {
+    color: #f00;
+    margin: 0 0 5px 0;
+    padding: 0;
+}
+
+#popupBox ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#popupBox li {
+    padding: 0 0 5px 0;
+    white-space: nowrap;
+}
+
+#popupBox li small {
+    color: #777;
+    display: block;
+    margin: 3px 0 0 13px;
+}
+
+#popupBox li a {
+    color: #f00;
+}

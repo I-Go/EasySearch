@@ -1,0 +1,61 @@
+{
+	// basic info --------------------------------------------------------------
+	"name"				: "EasySearch",
+	"version"			: "1.0",
+	"description"		: "快搜：方便快捷的多搜索引擎搜索",
+	"manifest_version"	: 2,
+	"icons"				: {"128": "images/es.png"},
+	"background"		: {
+		"page"			: "html/background.html"
+	},
+	// type --------------------------------------------------------------
+	"browser_action"	: {
+		"default_icon"	: "images/es.png",
+		"default_popup" : "html/popup.html"
+	},
+	// page injection --------------------------------------------------------------
+	"content_scripts"	: [{
+		"matches"			: [ "http://*/*","https://*/*" ],
+		"exclude_globs"		: [ "*.jpg","*.jpeg","*.gif","*.png","*.bmp","*.webp",
+								"*.css","*.swf","*.js","*.zip","*.rar","*.tar","*.tar.gz","*.tgz","*.tar.bz2","*.tbz2",
+								"*.doc","*.docx","*.ppt","*.pptx","*.xls","*.xlsx","*.pdf","*.xml","*.txt",
+								"*.mpg","*.mpeg","*.qt","*.mp4","*.m4v","*.m4a","*.mp3","*.ogv","*.ogm","*.ogg","*.oga","*.webm","*.wav",
+								"*.","*." ],
+		"css"				: [ "css/inject.css" ],
+		"js"				: [ "js/resource/jquery-3.2.1.min.js" , "js/inject.js" ],
+		"run_at" 			: "document_start"
+	}],
+	// imports & permissions --------------------------------------------------------------
+	"web_accessible_resources" : [
+		"html/iframe/*"
+	],
+	"permissions"		: [
+		"tabs",
+		"webRequest",
+		"webRequestBlocking",
+	    "http://*/*",
+    	"https://*/*"
+	],
+	//快捷键设置 commands --------------------------------------------------------------
+	"commands": {
+	   "start_up_easy_search": {
+		   "description": "启动EasySearch",
+		   "suggested_key": {
+			   "windows": "Alt+S",
+               "mac": "Command+Shift+Y",
+               "chromeos": "Ctrl+Shift+U",
+               "linux": "Ctrl+Shift+J",
+			   "default": "Alt+S"
+		   }
+	   },
+	   "stop_easy_search": {
+		   "description": "退出EasySearch",
+		   "suggested_key": {
+			   "windows": "Alt+X",
+               "mac": "Command+X",
+			   "default": "Alt+X"
+		   }
+	   }
+   }
+
+}
