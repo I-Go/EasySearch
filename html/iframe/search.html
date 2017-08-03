@@ -1,26 +1,33 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" media="all" href="../../css/base.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="../../css/font-awesome.min.css" />
-	<script src="../../js/resource/jquery-3.2.1.min.js"></script>
-	<script src="../../js/iframe.js"></script>
-	<script src="../../js/iframe/search.js"></script>
 	<title>EasySearch</title>
+	<meta http-equiv=Content-Type content=texthtml; charset=utf-8>
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/base.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/resource/bootstrap-material-design.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="../../css/font-awesome.min.css" />
+	<!-- Material Design fonts -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+	<!-- Bootstrap Material Design -->
+	<!-- <script src="../../js/resource/velocity.min.js"></script> -->
 </head>
 
 <body>
+	<div id="close-button" class="close-button" onclick="onCloseButtonClick()">
+		<p><i class="icon-close icon-2x">X</i></p>
+	</div>
 	<div id="search-box" class="input-group">
-		<input type="text" id="keyword" class="form-control" placeholder="input search keyword" aria-describedby="basic-addon2">
-		<span id="search-button" class="input-group-addon" id="basic-addon2">Search</span>
-		<span id="close-button" class="input-group-addon" id="basic-addon2">Close</span>
+		<input type="text" id="keyword" class="form-control" placeholder=" please input search keyword" aria-describedby="basic-addon1">
+		<span id="search-button" class="input-group-addon" id="basic-addon1"><i class="icon-search icon-2x"></i></span>
 	</div>
 	<div id="left-search" class="search-div"> </div>
-
 	<div id="right-search" class="search-div"> </div>
-	<!-- <iframe width="100%" height="254" style="visibility:visible" src="https://www.google.com/search?q=abc"></iframe> -->
-
 </body>
+
+<script src="../../js/resource/jquery-3.2.1.min.js"></script>
+<script src="../../js/iframe.js"></script>
+<script src="../../js/iframe/search.js"></script>
 
 </html>

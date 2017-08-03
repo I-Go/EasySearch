@@ -8,31 +8,23 @@ var Search = (function() {
 		_iframe = new IframeManager();
 		_iframe.setListener(onMessage);
 
-		$("#keyword").focus();
+
 		$('#search-button').on('click', onSearchButtonClick);
 		$('#close-button').on('click', onCloseButtonClick);
 
 		$(document).keyup(onEnterKeyUp);
+
+		$("#keyword").focus();
 	};
 
 	// private functions --------------------------------------------------------
 	function loadGoogleSearch(keyword) {
-		debugger;
 		iframe = $('<iframe />', {
 			id: 'google',
 			src: "https://www.google.com/search?q=" + keyword,
 			scrolling: true
 		});
 		$('#left-search').append(iframe);
-	}
-
-	function loadBaiduSearch(keyword) {
-		iframe = $('<iframe />', {
-			id: 'baidu',
-			src: "https://www.baidu.com/s?wd=" + keyword,
-			scrolling: true
-		});
-		$('#right-search').append(iframe);
 	}
 
 	function loadBingSearch(keyword) {
@@ -71,6 +63,7 @@ var Search = (function() {
 		loadBingSearch(keyword);
 
 		$('#search-box').hide();
+
 		// hide iframe and delete app-container
 		_iframe.tell('search-button-clicked', {
 			keyword: keyword

@@ -5,11 +5,21 @@
 #x-container {
     background: rgba(0, 0, 0, 0) none repeat scroll !important;
     top: 20%;
-    right: 5px;
+    right: 0px;
+    margin-right: -20px;
     position: fixed;
     z-index: 999999;
     width: 60px;
     height: 60px;
+}
+
+#x-container:hover {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #009688;
+    transition: all 0.5s ease-in-out;
+    transform: translate(-15px, 0px);
 }
 
 #x-iframe-widget {

@@ -27,6 +27,7 @@ var Inject = (function() {
 
 		// listen to the Control Center (background.js) messages
 		chrome.extension.onMessage.addListener(background_onMessage);
+
 	};
 
 	// private functions --------------------------------------------------------
@@ -95,6 +96,7 @@ var Inject = (function() {
 		$("#app-iframe-search").hide();
 		$("#app-container").remove();
 		delete _views.search;
+		$("#x-container").show();
 	}
 
 	// send a message to "background.js"
@@ -171,6 +173,7 @@ var Inject = (function() {
 		removeAppView();
 		var search = loadAppView('search');
 		search.iframe.show();
+		$("#x-container").hide();
 	};
 
 	function message_onSearchButtonClicked(data) {

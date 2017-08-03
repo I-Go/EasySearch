@@ -27,6 +27,10 @@ var Background = (function() {
 
 		//rewrite  user agent before request
 		// chrome.webRequest.onBeforeSendHeaders.addListener(setUserAgentBeforeRequest, _requestFilter, ['requestHeaders', 'blocking']);
+
+		//rewrite  google search url
+		// chrome.webRequest.onBeforeSendHeaders.addListener(setUserAgentBeforeRequest, _requestFilter, ['requestHeaders', 'blocking']);
+
 	}
 	// private functions --------------------------------------------------------
 	function upateCurrentTab() {};
