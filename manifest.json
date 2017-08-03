@@ -16,18 +16,21 @@
 	// page injection --------------------------------------------------------------
 	"content_scripts"	: [{
 		"matches"			: [ "http://*/*","https://*/*" ],
+		/*"all_frames": true,*/
 		"exclude_globs"		: [ "*.jpg","*.jpeg","*.gif","*.png","*.bmp","*.webp",
 								"*.css","*.swf","*.js","*.zip","*.rar","*.tar","*.tar.gz","*.tgz","*.tar.bz2","*.tbz2",
 								"*.doc","*.docx","*.ppt","*.pptx","*.xls","*.xlsx","*.pdf","*.xml","*.txt",
 								"*.mpg","*.mpeg","*.qt","*.mp4","*.m4v","*.m4a","*.mp3","*.ogv","*.ogm","*.ogg","*.oga","*.webm","*.wav",
 								"*.","*." ],
 		"css"				: [ "css/inject.css" ],
-		"js"				: [ "js/resource/jquery-3.2.1.min.js" , "js/inject.js" ],
+		"js"				: [ "js/resource/jquery-3.2.1.min.js" , "js/iframe/iframeInject.js" ,"js/inject.js" ],
 		"run_at" 			: "document_start"
+
 	}],
 	// imports & permissions --------------------------------------------------------------
 	"web_accessible_resources" : [
-		"html/iframe/*"
+		"html/iframe/*",
+		"getFrameId"
 	],
 	"permissions"		: [
 		"tabs",

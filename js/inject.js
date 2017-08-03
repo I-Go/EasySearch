@@ -126,6 +126,9 @@ var Inject = (function() {
 			case 'search-button-clicked':
 				message_onSearchButtonClicked(request.data);
 				break;
+			case 'inject-script-to-iframe':
+				message_onAppFrameLoaded(request.data);
+				break;
 			case 'stop_easy_search':
 				removeAppView();
 				break;
@@ -185,6 +188,14 @@ var Inject = (function() {
 			url: window.location.href,
 			title: document.title,
 			keyword: data.keyword
+		});
+	};
+
+	function message_onAppFrameLoaded(data) {
+		// tell "background.js" to inject Script to Iframe
+		tell('inject-script-to-iframe', {
+			url: window.location.href,
+			title: document.title
 		});
 	};
 

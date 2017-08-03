@@ -44,6 +44,9 @@ var Background = (function() {
 			case 'all-iframes-loaded':
 				message_allIframesLoaded(request.data);
 				break;
+			case 'inject-script-to-iframe':
+				message_onAppFrameLoaded(request.data);
+				break;
 		}
 	};
 
@@ -52,9 +55,32 @@ var Background = (function() {
 		_this.tell('start_up_easy_search', {});
 	}
 
+	// stop EasySearch
 	function stopEasySearch() {
 		_this.tell('stop_easy_search', {});
 	}
+
+	//set the style of body for iframe
+	function injectScript2Iframe() {
+		chrome.windows.getCurrent(function(currentWindow) {
+			chrome.tabs.query({
+				active: true,
+				windowId: currentWindow.id
+			}, function(activeTabs) {
+				console.log("TabId:" + activeTabs[0].id + ", And windowId:" + activeTabs[0].windowId);
+				//The first parameter indicates which tag is injected
+				//The second argument is an option object, file that should be injected into the file, it can be code, such as: code: "alert (1);"
+				//AllFrames means that if the page has an iframe, is it also injected into the iframe script
+				chrome.tabs.executeScript(activeTabs[0].id, {
+					// file: "iframeInject.js",
+					// code: "alert(window.id);window.body.style.backgroundColor = 'blue';",
+					code: 'alert(1);',
+					allFrames: true
+				});
+			});
+		});
+	}
+
 
 	//set user agent before request
 	function setUserAgentBeforeRequest(d) {
@@ -127,6 +153,10 @@ var Background = (function() {
 	function message_allIframesLoaded(data) {
 		upateCurrentTab();
 	};
+
+	function message_onAppFrameLoaded(data) {
+		injectScript2Iframe()
+	}
 
 	// public functions ---------------------------------------------------------
 	_this.tell = function(message, data) {

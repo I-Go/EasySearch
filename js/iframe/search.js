@@ -68,6 +68,9 @@ var Search = (function() {
 		_iframe.tell('search-button-clicked', {
 			keyword: keyword
 		});
+
+		// inject Script to Iframe
+		// _iframe.tell('inject-script-to-iframe', {});
 	};
 
 	// logout app and close  search view
