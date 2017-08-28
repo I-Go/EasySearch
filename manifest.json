@@ -23,7 +23,7 @@
 								"*.mpg","*.mpeg","*.qt","*.mp4","*.m4v","*.m4a","*.mp3","*.ogv","*.ogm","*.ogg","*.oga","*.webm","*.wav",
 								"*.","*." ],
 		"css"				: [ "css/inject.css" ],
-		"js"				: [ "js/resource/jquery-3.2.1.min.js" , "js/iframe/iframeInject.js" ,"js/inject.js" ],
+		"js"				: [ "js/resource/jquery-3.2.1.min.js" , "js/inject.js" ],
 		"run_at" 			: "document_start"
 
 	}],
@@ -35,11 +35,16 @@
 	"permissions"		: [
 		"tabs",
 		"cookies",
+		"activeTab",
 		"webRequest",
 		"webRequestBlocking",
 	    "http://*/*",
     	"https://*/*"
 	],
+	//自定义新标签页 --------------------------------------------------------------
+	//"chrome_url_overrides": {
+    //    "newtab": "html/tab.html"
+    //},
 	//快捷键设置 commands --------------------------------------------------------------
 	"commands": {
 	   "start_up_easy_search": {

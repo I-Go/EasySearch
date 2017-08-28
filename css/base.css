@@ -1,227 +1,175 @@
-/*//////////////////////////////////////////////////////////////////////////////////////////////
+    /*//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////  GENERAL  ///////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////*/
 
-body {
-    background: rgba(0, 0, 0, 0) none repeat scroll !important;
-    font: 11px Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+    body {
+        background: rgba(0, 0, 0, 0) none repeat scroll !important;
+        font: 11px Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-body * {
-    box-sizing: border-box;
-}
-
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////  EasySearch IFrame  ///////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////*/
-
-.iframe-scrollbar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.iframe-scrollbar::-webkit-scrollbar-track {
-    border-radius: 200px;
-    background-color: #dde4e6;
-}
-
-.iframe-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #9fa9ac;
-    border-radius: 200px;
-}
-
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////
+    body * {
+        box-sizing: border-box;
+    }
+    /*//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////  EasySearch  ///////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////*/
 
-.close-button {
-    position: absolute;
-    margin-top: 1%;
-    width: 35px;
-    height: 35px;
-    right: 20px;
-    z-index: 999;
-    cursor: pointer;
-    color: #626362;
-}
-
-.close-button i:hover {
-    font-weight: bold;
-    color: #009688;
-    /*渐变线*/
-    /*background-image: linear-gradient(0deg, #009688 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0);*/
-}
-
-#search-box {
-    position: absolute;
-    top: 18%;
-    width: 715px;
-    right: 120px;
-    z-index: 999;
-}
-
-#keyword {
-    height: 50px;
-    color: #b6bdb8;
-    font-size: large;
-    caret-color: #12dc98;
-}
-
-#keyword::-webkit-input-placeholder {
-    color: #b6bdb8;
-    font-size: large;
-}
-
-#search-button {
-    height: 70px;
-    width: 25px;
-    color: #b6bdb8;
-    animation: myAnimation 0.8s forwards;
-    /*transform: scale(1);
-    transition: all 0.7s ease-in-out;*/
-    /*animation: flowlight 5s linear infinite;*/
-    /*-webkit-background-clip: text;*/
-    /*color: transparent;*/
-}
-
-#search-button:hover {
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #b6bdb8;
-    /*transition: all 0.5s ease-in;*/
-    /*transform: scale(1.3);*/
-}
-
-#search-button.animate {
-    color: #009688;
-    transform: scale(1.2);
-}
-
-@keyframes myAnimation {
-    0% {
-        opacity: 0;
-        color: #b6bdb8;
-        transform: scale(1, 1);
+    .close-button {
+        position: absolute;
+        margin-top: 1%;
+        width: 35px;
+        height: 35px;
+        right: 20px;
+        z-index: 999;
+        cursor: pointer;
+        color: #626362;
     }
-    20% {
-        opacity: 0.8;
-        color: #62a275;
-        transform: scale(1.1, 1.1);
-    }
-    40% {
-        opacity: 1;
-        color: #027ae4;
-        transform: scale(1.2, 1.2);
-    }
-    60% {
-        opacity: 1;
-        color: #4e0dc7;
-        transform: scale(1.3, 1.3);
-    }
-    80% {
-        opacity: 1;
-        color: #027ae4;
-        transform: scale(1.2, 1.2);
-    }
-    100% {
-        opacity: 1;
+
+    .close-button i:hover {
+        font-weight: bold;
         color: #009688;
-        transform: scale(1.1, 1.1);
+        /*渐变线*/
+        /*background-image: linear-gradient(0deg, #009688 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0);*/
     }
-}
 
-#left-search {
-    float: left;
-    width: 50%;
-    height: 100%;
-    background: rgba(241, 249, 247, 0.3) none repeat scroll !important;
-}
+    #search-box {
+        position: absolute;
+        top: 22%;
+        width: 800px;
+        right: 120px;
+        z-index: 999;
+    }
 
-#right-search {
-    float: left;
-    width: 50%;
-    height: 100%;
-    background: rgba(249, 251, 249, 0.3) none repeat scroll !important;
-}
+    #keyword {
+        height: 65px;
+        color: #b6bdb8;
+        font-size: x-large;
+        caret-color: #12dc98;
+    }
 
-.search-div iframe {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
+    #keyword::-webkit-input-placeholder {
+        color: #b6bdb8;
+        font-size: x-large;
+    }
 
-.iframe-overflow-x {
-    overflow-x: hidden;
-}
+    #search-button {
+        height: 70px;
+        width: 25px;
+        color: #b6bdb8;
+        animation: myAnimation 0.8s forwards;
+        /*transform: scale(1);
+    transition: all 0.7s ease-in-out;*/
+        /*animation: flowlight 5s linear infinite;*/
+        /*-webkit-background-clip: text;*/
+        /*color: transparent;*/
+    }
 
+    #search-button:hover {
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #b6bdb8;
+        /*transition: all 0.5s ease-in;*/
+        /*transform: scale(1.3);*/
+    }
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////
+    #search-button.animate {
+        color: #009688;
+        transform: scale(1.2);
+    }
+
+    @keyframes myAnimation {
+        0% {
+            opacity: 0;
+            color: #b6bdb8;
+            transform: scale(1, 1);
+        }
+        20% {
+            opacity: 0.8;
+            color: #62a275;
+            transform: scale(1.1, 1.1);
+        }
+        40% {
+            opacity: 1;
+            color: #027ae4;
+            transform: scale(1.2, 1.2);
+        }
+        60% {
+            opacity: 1;
+            color: #4e0dc7;
+            transform: scale(1.3, 1.3);
+        }
+        80% {
+            opacity: 1;
+            color: #027ae4;
+            transform: scale(1.2, 1.2);
+        }
+        100% {
+            opacity: 1;
+            color: #009688;
+            transform: scale(1.1, 1.1);
+        }
+    }
+
+    #left-search {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background: rgba(241, 249, 247, 0.3) none repeat scroll !important;
+    }
+
+    #right-search {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background: rgba(249, 251, 249, 0.3) none repeat scroll !important;
+    }
+
+    .search-div iframe {
+        width: 100%;
+        height: 100%;
+        border: 0px;
+    }
+    /*//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////  widget-box  ///////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////*/
 
-#widget-box {
-    justify-content: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
-}
+    #widget-box {
+        justify-content: center;
+        align-items: center;
+        display: -webkit-flex;
+        display: flex;
+    }
 
-#widget-box .widget {
-    /*border-radius: 10px 10px 10px 10px;*/
-    /*background-color: green;*/
-    color: #868383;
-    font-size: 18px;
-    justify-content: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: flex;
-}
+    #widget-box .widget {
+        /*border-radius: 10px 10px 10px 10px;*/
+        /*background-color: green;*/
+        color: #868383;
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+        display: -webkit-flex;
+        display: flex;
+    }
+    /*#widget-box .widget.active,*/
 
-
-/*#widget-box .widget.active,*/
-
-#widget-box .widget:hover {
-    color: #009688;
-    cursor: pointer;
-}
-
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////
+    #widget-box .widget:hover {
+        color: #009688;
+        cursor: pointer;
+    }
+    /*//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////  Popup       ///////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////*/
 
-#popupBox {
-    padding: 30px;
-    width: 500px;
-}
+    #popupBox {
+        padding: 30px;
+        width: 200px;
+        border: 1px red;
+        background-color: aliceblue;
+        float: right;
+        height: 300px;
+    }
 
-#popupBox h1 {
-    color: #f00;
-    margin: 0 0 5px 0;
-    padding: 0;
-}
-
-#popupBox ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#popupBox li {
-    padding: 0 0 5px 0;
-    white-space: nowrap;
-}
-
-#popupBox li small {
-    color: #777;
-    display: block;
-    margin: 3px 0 0 13px;
-}
-
-#popupBox li a {
-    color: #f00;
-}
+    #popupBox h1 {}

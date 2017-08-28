@@ -55,8 +55,8 @@ var Inject = (function() {
 		return _views[id];
 	};
 
-	// loading app view
-	function loadAppView(id) {
+	// loading search view
+	function loadEasySearchView(id) {
 		var APP = {
 			CONTAINER: 'app-container',
 			IFRAME_PREFIX: 'app-iframe-'
@@ -65,12 +65,12 @@ var Inject = (function() {
 		if (_views[id]) return _views[id];
 
 		// iframe initial details
-		var src = chrome.extension.getURL('html/iframe/' + id + '.html?view=' + id + '&_' + (new Date().getTime())),
-			iframe = $('<iframe />', {
-				id: APP.IFRAME_PREFIX + id,
-				src: src,
-				scrolling: false
-			});
+		var src = chrome.extension.getURL('html/iframe/' + id + '.html?view=' + id + '&_' + (new Date().getTime()));
+		var iframe = $('<iframe />', {
+			id: APP.IFRAME_PREFIX + id,
+			src: src,
+			scrolling: false
+		});
 
 		// view
 		_views[id] = {
@@ -87,13 +87,12 @@ var Inject = (function() {
 		// add to the container
 		app_container.append(iframe);
 
-
 		return _views[id];
 	};
 
 	// remove app view
 	function removeAppView() {
-		$("#app-iframe-search").hide();
+		// $("#app-iframe-search").hide();
 		$("#app-container").remove();
 		delete _views.search;
 		$("#x-container").show();
@@ -116,6 +115,7 @@ var Inject = (function() {
 		switch (request.message) {
 			case 'iframe-loaded':
 				message_onIframeLoaded(request.data);
+				$('body').addClass('body-scrollbar');
 				break;
 			case 'widget-clicked':
 				message_onWidgetClicked(request.data);
@@ -174,7 +174,7 @@ var Inject = (function() {
 
 	function message_onWidgetClicked(data) {
 		removeAppView();
-		var search = loadAppView('search');
+		var search = loadEasySearchView('search');
 		search.iframe.show();
 		$("#x-container").hide();
 	};
